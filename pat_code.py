@@ -2,7 +2,6 @@ import requests
 import json
 import time
 global false, null, true
-false = null = true = ''
 
 with open("patb.json",'rb') as load_f:
     load_dict = json.load(load_f)
@@ -30,3 +29,4 @@ for item in id_list:
     with open("C:\\Users\\Administrator\\Desktop\\patb_code\\PAT-B"+item['label']+" "+item['title']+".cpp", "w", encoding='utf-8') as f:
         f.write(code)
     time.sleep(2)  # delays for 2 seconds
+
