@@ -1,7 +1,6 @@
 import requests
 import json
 import time
-global false, null, true
 
 with open("patb.json",'rb') as load_f:
     load_dict = json.load(load_f)
@@ -17,10 +16,11 @@ for item in id_list:
     urla = "https://pintia.cn/api/problem-sets/994805342720868352/problems/"+item['id']+"?exam_id=1008371401626570752"
     #乙级
     urlb = "https://pintia.cn/api/problem-sets/994805260223102976/problems/"+item['id']+"?exam_id=1120104"
-    print(url)
+    print(urla)
     response = requests.get(urlb,cookies=cookie)
     restext = response.text
     res = json.loads(restext)
+    print(res)
     if(res["problemSetProblem"]["lastSubmissionId"]=="0"):
         continue
     code = res["problemSetProblem"]["lastSubmissionDetail"]["programmingSubmissionDetail"]["program"]
